@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname tetris2.1) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname Tetris) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 (require 2htdp/image)
 (require 2htdp/universe)
  
@@ -1118,10 +1118,6 @@
                                      cleared-below-num)
                                   (brick-color curr-brick))) (row-bricks curr-row)))))
                         '() (pile->rows world)))))))
-
-;(check-expect (shift-pile BOTT-ROW-WORLD) (make-world O-TETRA '()))
-;(check-expect (shift-pile (make-world S-TETRA (cons (make-brick 0 2 "pink") FULL-ROW-Y=0&1)))
-;              (make-world S-TETRA (cons (make-brick 0 0 "pink") '())))
 
 (define TICK-RATE .1) ; seconds
 (big-bang (make-world (random-tetra (random 7)) '())
